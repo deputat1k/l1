@@ -37,3 +37,8 @@ npm run build  # production
 ```
 # 5. Open index.html in your browser
 
+## 📷 Screenshot
+
+<p align="center">
+  <img src="<img width="1877" height="1052" alt="image" src="https://github.com/user-attachments/assets/2e5d5fc1-ddf9-4fe2-a46b-28f70eadaf1d" />
+</p>
