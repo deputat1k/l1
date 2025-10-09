@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* === Jungle Theme === */
+@theme {
+  --color-primary: #1b4332; /* насичений зелений, як листя */
+  --color-accent: #95d5b2;  /* м'який м'ятний */
+  --color-bg: #081c15;      /* темно-зелений фон */
+  --color-card: #112d1f;    /* трохи світліший блок */
+  --color-text: #d8f3dc;    /* світлий текст */
+  --font-sans: "Poppins", sans-serif;
+}
