@@ -36,13 +36,4 @@ npm run dev    # development
 npm run build  # production
 ```
 # 5. Open index.html in your browser
-🧩 Example of Tailwind Usage
-html
-<div class="container mx-auto p-4">
-  <h1 class="text-3xl font-bold text-center text-blue-600">
-    Hello Tailwind!
-  </h1>
-  <p class="mt-4 text-gray-700">
-    This is my first lab work using Tailwind CSS.
-  </p>
-</div>
+
