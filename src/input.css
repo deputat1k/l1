@@ -9,3 +9,49 @@
   --color-text: #d8f3dc;    /* світлий текст */
   --font-sans: "Poppins", sans-serif;
 }
+
+/* === Кнопки калькулятора === */
+.calc-btn {
+  background: linear-gradient(145deg, #2d6a4f, #1b4332);
+  color: #d8f3dc;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #52b788;
+}
+
+.calc-btn:hover {
+  background: linear-gradient(145deg, #40916c, #1b4332);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.calc-btn:active {
+  transform: translateY(1px);
+  background: #081c15;
+}
+
+/* === кнопка підтвердження === */
+.confirm-btn {
+  background: linear-gradient(145deg, #74c69d, #2d6a4f);
+  color: #081c15;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease-in-out;
+}
+
+.confirm-btn:hover {
+  background: linear-gradient(145deg, #95d5b2, #2d6a4f);
+  transform: scale(1.05);
+}
+
+.confirm-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
