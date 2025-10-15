@@ -8,9 +8,13 @@ The goal: practice Tailwind utility classes and basic setup.
 ## 🏗 Project Structure
 
 l1/
+
 ├── src/ # HTML/CSS/JS source files
+
 ├── tailwind.config.js # Tailwind configuration
+
 ├── package.json # Dependencies and scripts
+
 └── ...
 
 
