@@ -44,5 +44,5 @@ npm run build  # production
 ## 📷 Screenshot
 
 <p align="center">
- <img width="1887" height="1042" alt="image" src="https://github.com/user-attachments/assets/7681bfab-ea4b-4590-a48e-4014f32f78a8" />
+ <img width="1877" height="1052" alt="Screenshot From 2025-10-09 13-32-17" src="https://github.com/user-attachments/assets/305a3216-32ae-487d-aafc-8a85cf8925e3" />
 </p>
