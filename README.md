@@ -40,5 +40,5 @@ npm run build  # production
 ## 📷 Screenshot
 
 <p align="center">
- <img width="1877" height="1052" alt="image" src="https://github.com/user-attachments/assets/e0bbfb81-8f7c-49d5-995a-9719502b2446" />
+ <img width="1887" height="1042" alt="image" src="https://github.com/user-attachments/assets/7681bfab-ea4b-4590-a48e-4014f32f78a8" />
 </p>
