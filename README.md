@@ -1,26 +1,38 @@
-# Lab Work #2 — Tailwind CSS Practice
+# 🧮 Lab Work #3 — JavaScript Practice
 
 ## 📘 Description
+This project is part of **Lab Work #3**, focused on practicing **JavaScript basics** — variables, functions, DOM manipulation, and event handling.  
+A simple **calculator** was created to demonstrate interaction between HTML, CSS (Tailwind), and JS logic.  
 
-This is a simple website for **Lab Work #2**, where Tailwind CSS was used for the first time to style elements and layouts.  
-The goal: practice Tailwind utility classes and basic setup.
+> 🧠 The main goal: gain hands-on experience with JavaScript logic and dynamic web page behavior.
 
-## 🏗 Project Structure
+---
+
+## 🗂️ Project Structure
 
 l1/
+├── src/        
+│   ├── index.html       
+│   ├── style.css        
+│   └── script.js     
+│
+├── tailwind.config.js   
+├── package.json         
+├── .gitignore           
+└── README.md            
 
-├── src/ # HTML/CSS/JS source files
 
-├── tailwind.config.js # Tailwind configuration
+---
 
-├── package.json # Dependencies and scripts
+## 🧩 Features
+- Simple calculator (addition, subtraction, multiplication, division)
+- Responsive layout with Tailwind CSS
+- Clean and modular JS code
+- Practiced DOM manipulation and event handling
 
-└── ...
-
-
+---
 
 ## 🚀 How to Run
-
 
 # 1. Clone the repository
 ```
@@ -34,12 +46,15 @@ cd l1
 ```
 npm install
 ```
-# 4. Build or watch the project
+# 4. Run project in dev mode
 ```
-npm run dev    # development
-npm run build  # production
+npm run dev
 ```
-# 5. Open index.html in your browser
+# 5. Build for production
+```
+npm run build
+```
+# 6. Open index.html in your browser
 
 ## 📷 Screenshot
 
