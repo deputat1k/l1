@@ -9,9 +9,7 @@
 </head>
 <body class="bg-bg text-text font-sans min-h-screen flex flex-col">
 
-
   <header class="bg-primary text-accent text-center py-6 shadow-lg relative">
-
     <button id="menuBtn" class="absolute left-4 top-6 bg-accent text-primary px-3 py-2 rounded-lg hover:bg-bg transition md:hidden">
       ☰
     </button>
@@ -19,16 +17,11 @@
     <p class="text-lg opacity-90">Твій простір для росту та натхнення</p>
   </header>
 
-
   <div class="flex flex-1 relative">
-
-    <!-- затемнення для мобільного -->
     <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-30 transition-opacity duration-300 md:hidden"></div>
 
-    <!-- бокова панель -->
     <aside id="sidebar"
       class="fixed md:static left-0 top-0 h-full md:h-auto w-72 md:w-96 lg:w-[260px] bg-primary text-accent flex flex-col items-center py-10 shadow-2xl transform -translate-x-full md:translate-x-0 transition-transform duration-200 z-40">
-      
       <div class="mb-16 text-center">
         <h2 class="text-2xl font-bold">Меню</h2>
       </div>
@@ -42,9 +35,7 @@
       </nav>
     </aside>
 
-    <!-- основа -->
     <main class="flex-1 grid md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 overflow-y-auto">
-      <!-- статті -->
       <section class="bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
         <h2 class="text-2xl font-bold text-accent mb-4">🪶 Статті</h2>
         <p class="mb-3 text-text/90">
@@ -56,7 +47,6 @@
         </button>
       </section>
 
-      <!-- книги -->
       <section class="bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
         <h2 class="text-2xl font-bold text-accent mb-4">📖 Книги</h2>
         <ul class="list-disc list-inside space-y-2 text-text/90">
@@ -66,7 +56,6 @@
         </ul>
       </section>
 
-      <!-- курси -->
       <section class="bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
         <h2 class="text-2xl font-bold text-accent mb-4">🎓 Курси</h2>
         <p class="text-text/90 mb-3">
@@ -77,11 +66,9 @@
         </button>
       </section>
 
-      <!-- калькулятор -->
       <section class="bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all md:col-span-2 lg:col-span-2">
         <h2 class="text-2xl font-bold text-accent mb-4">🧮 Калькулятор</h2>
         <form id="calcForm" class="space-y-4">
-
           <div class="flex flex-col sm:flex-row gap-4">
             <input id="num1" type="number" placeholder="Перше число"
               class="p-2 rounded-lg bg-bg border border-accent text-text w-full" required>
@@ -98,20 +85,20 @@
 
           <div class="flex justify-center mt-4">
             <select id="saveHistory" class="p-2 rounded-lg bg-bg border border-accent text-text">
-              <option value="no">Зберегти до історії? — Так</option>
-              <option value="yes">Ні</option>
+              <option value="yes">Зберегти до історії — Так</option>
+              <option value="no">Ні</option>
             </select>
           </div>
 
           <div class="flex justify-center mt-4">
-            <button id="confirmCalc" type="submit" class="confirm-btn">✅ Підтвердити</button>
+            <button id="confirmCalc" type="submit" class="bg-accent text-bg px-4 py-2 rounded-lg hover:bg-primary transition">
+              ✅ Підтвердити
+            </button>
           </div>
         </form>
-
         <div id="result" class="text-center text-xl text-accent mt-4"></div>
       </section>
 
-      <!-- історія -->
       <section class="bg-card rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
         <h2 class="text-2xl font-bold text-accent mb-4">🗒️ Історія обчислень</h2>
         <div id="history" class="space-y-2 text-text/90 mb-3"></div>
@@ -122,37 +109,31 @@
     </main>
   </div>
 
-
   <footer class="bg-primary text-center py-4 text-accent text-sm">
     © 2025 MindSpace | Створено з натхненням 🌱
   </footer>
 
-   
-
- <script>
+  <script>
+    // === Меню ===
     const menuBtn = document.getElementById('menuBtn');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
-
     function toggleMenu() {
       sidebar.classList.toggle('-translate-x-full');
       overlay.classList.toggle('hidden');
       document.body.classList.toggle('overflow-hidden');
     }
-
     menuBtn.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', toggleMenu);
 
- // Логіка
+    // === Калькулятор ===
     let selectedOp = null;
-
     const calcBtns = document.querySelectorAll('.calc-btn');
     const form = document.getElementById('calcForm');
     const resultDiv = document.getElementById('result');
     const historyDiv = document.getElementById('history');
     const clearBtn = document.getElementById('clearHistory');
 
-    // вибір операції
     calcBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         selectedOp = btn.dataset.op;
@@ -161,24 +142,15 @@
       });
     });
 
-    // натискання Підтвердити
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
       const num1 = parseFloat(document.getElementById('num1').value);
       const num2 = parseFloat(document.getElementById('num2').value);
       const save = document.getElementById('saveHistory').value;
-
       if (!selectedOp) {
         resultDiv.textContent = "⚠️ Виберіть операцію!";
         return;
       }
-
-      if (isNaN(num1) || isNaN(num2)) {
-        resultDiv.textContent = "⚠️ Введіть обидва числа!";
-        return;
-      }
-
       let res;
       switch (selectedOp) {
         case '+': res = num1 + num2; break;
@@ -186,23 +158,62 @@
         case '*': res = num1 * num2; break;
         case '/': res = num2 !== 0 ? num1 / num2 : "Ділення на 0!"; break;
       }
-
       resultDiv.textContent = `Результат: ${res}`;
-
       if (save === "yes" && res !== "Ділення на 0!") {
         const item = document.createElement('p');
         item.textContent = `${num1} ${selectedOp} ${num2} = ${res}`;
         historyDiv.appendChild(item);
       }
-
       form.reset();
       selectedOp = null;
       calcBtns.forEach(b => b.classList.remove('ring-2', 'ring-accent'));
     });
+    clearBtn.addEventListener('click', () => { historyDiv.innerHTML = ""; });
 
-    clearBtn.addEventListener('click', () => {
-      historyDiv.innerHTML = "";
-    });
+    // === Лабораторна №4 ===
+    // 1. IIFE
+    (function() {
+      console.log("Поточний URL сторінки:", window.location.href);
+    })();
+
+    // 2. Методи масивів
+    const numbers = [10, 22, 35, 8, 42, 50, 19, 75, 30, 12];
+    const doubled = numbers.map(n => n * 2);
+    const filtered = numbers.filter(n => n > 25);
+    const sum = numbers.reduce((acc, n) => acc + n, 0);
+    console.log("Оригінальний масив:", numbers);
+    console.log("Подвоєні:", doubled);
+    console.log("Більше 25:", filtered);
+    console.log("Сума елементів:", sum);
+
+    // 3. Spread оператор
+    function multiply(a, b) { return a * b; }
+    const arr = [7, 9];
+    console.log("Добуток через Spread:", multiply(...arr));
+
+    // 4. Set
+    const items = new Set(["apple", "banana", "apple", "orange", "banana"]);
+    console.log("Елементи Set:");
+    for (const item of items) console.log(item);
+
+    // 5. bind
+    const user = { name: "Олег", getName() { console.log("Користувач:", this.name); } };
+    const admin = { name: "Адмін" };
+    const boundGetName = user.getName.bind(admin);
+    boundGetName();
+
+    // 6. Замикання (Closure)
+    function createAdvancedCounter() {
+      let count = 0;
+      return {
+        increment() { count++; console.log("Лічильник:", count); },
+        decrement() { count--; console.log("Лічильник:", count); }
+      };
+    }
+    const counter = createAdvancedCounter();
+    counter.increment();
+    counter.increment();
+    counter.decrement();
   </script>
 
 </body>
