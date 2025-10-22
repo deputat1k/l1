@@ -170,7 +170,7 @@
     });
     clearBtn.addEventListener('click', () => { historyDiv.innerHTML = ""; });
 
-    // === Лабораторна №4 ===
+    
     // 1. IIFE
     (function() {
       console.log("Поточний URL сторінки:", window.location.href);
@@ -186,7 +186,7 @@
     console.log("Більше 25:", filtered);
     console.log("Сума елементів:", sum);
 
-    // 3. Spread оператор
+    // 3. Spread 
     function multiply(a, b) { return a * b; }
     const arr = [7, 9];
     console.log("Добуток через Spread:", multiply(...arr));
@@ -202,7 +202,7 @@
     const boundGetName = user.getName.bind(admin);
     boundGetName();
 
-    // 6. Замикання (Closure)
+    // 6. (Closure)
     function createAdvancedCounter() {
       let count = 0;
       return {
